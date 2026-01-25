@@ -1,0 +1,6 @@
+{
+    "diagnostics.globals": [
+        "minetest"
+    ],
+    "workspace.library": ["../luanti-stub"]
+}
