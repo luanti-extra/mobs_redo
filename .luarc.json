@@ -1,6 +1,6 @@
 {
     "diagnostics.globals": [
-        "minetest"
+        "mobs"
     ],
     "workspace.library": ["../luanti-stub"]
 }

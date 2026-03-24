@@ -1,27 +1,31 @@
 
 -- called after mob registration to check for older settings
 
-function mobs.compatibility_check(self)
-
+function mobs.compatibility_check(target_entity)
 	-- simple mobs rotation setting
-	if self.drawtype == "side" then self.rotate = math.rad(90) end
+	if target_entity.drawtype == "side" then
+		target_entity.rotate = math.rad(90)
+	end
 
 	-- replace floats var from number to bool
-	if self.floats == 1 then self.floats = true
-	elseif self.floats == 0 then self.floats = false end
+	if target_entity.floats == 1 then
+		target_entity.floats = true
+	elseif target_entity.floats == 0 then
+		target_entity.floats = false
+	end
 end
 
--- deprecated functions
+-- old functions
 
-function mobs:yaw(entity, yaw, delay)
+function mobs.yaw(entity, yaw, delay)
 	entity:set_yaw(yaw, delay)
 end
 
-function mobs:set_animation(entity, anim)
-	entity:set_animation(anim)
+function mobs.set_animation(entity, anim, force)
+	entity:set_animation(anim, force)
 end
 
-function mobs:line_of_sight(entity, pos1, pos2)
+function mobs.line_of_sight(entity, pos1, pos2)
 	return entity:line_of_sight(pos1, pos2)
 end
 

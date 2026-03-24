@@ -6,12 +6,12 @@ local is_mc2 = core.get_modpath("mcl_mobs") -- MineClone2 check
 -- one of these is needed to ride mobs, otherwise no riding for you
 
 if not core.get_modpath("player_api") and not is_mc2 then
-
+---@diagnostic disable: duplicate-set-field
 	function mobs.attach() end
 	function mobs.detach() end
 	function mobs.fly() end
 	function mobs.drive() end
-
+---@diagnostic enable: duplicate-set-field
 	return
 end
 
